@@ -32,6 +32,7 @@
           <span routerLink="" class="branding spacer d-none d-md-inline"><img [src]="logo" /> {{ 'anms.title.long' | translate
             }}</span>
 
+          <!--
           <span class="d-none d-md-inline">
             <button mat-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]"
               routerLinkActive="active">
@@ -75,6 +76,7 @@
               </mat-option>
             </mat-select>
           </span>
+          -->
         </mat-toolbar>
       </div>
 
@@ -83,6 +85,7 @@
       </div>
 
       <div class="footer">
+        <!--
         <div class="row">
           <div class="col-sm-12 links">
             <a href="https://www.github.com/tomastrajan" target="_blank">
@@ -112,9 +115,10 @@
             </a>
           </div>
         </div>
+      -->
         <div class="row">
           <div class="col-12 signature">
-            &#169; <span class="year">{{year}}</span> - Tomas Trajan
+            &#169; <span class="year">{{year}}</span> - Payen Ent
             <br class="d-block d-sm-none">
             <a [matTooltip]="'anms.footer.changelog' | translate"
                matTooltipPosition="before"

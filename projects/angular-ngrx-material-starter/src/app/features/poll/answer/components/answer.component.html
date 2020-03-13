@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row" [ngClass]="routeAnimationsElements" rtl>
+    <div class="col-md-12 col-lg-6">
+      <ng-container *ngIf="poll$ | async as poll">
+        <h2>{{ poll.title }}</h2>
+        <mat-card
+          *ngFor="let answer of poll.answers;"
+          [ngClass]="routeAnimationsElements"
+        >
+          <mat-card-header>
+            <mat-card-title>{{ answer.questionSentence }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-actions>
+            <ng-container *ngIf="answer.answer==''">
+              <button mat-button (click)="doAnswer(answer.id, 'Yes')">Yes</button>
+              <button mat-button (click)="doAnswer(answer.id, 'No')">No</button>
+            </ng-container>
+            <ng-container *ngIf="answer.answer!=''">
+              <strong [ngStyle]="{ marginRight: '20px'}">{{ answer.answer }}</strong>
+            </ng-container>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+      <ng-container *ngIf="isCompletable$ | async as isCompletable">
+        <mat-card>
+          <button mat-button (click)="doAnswer(1, 'Yes')">Complete</button>
+        </mat-card>
+      </ng-container>
+    </div>
+  </div>  
+</div>  

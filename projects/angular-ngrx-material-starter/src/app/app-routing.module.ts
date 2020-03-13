@@ -4,7 +4,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'about',
+    redirectTo: 'feature-list',
     pathMatch: 'full'
   },
   {
@@ -28,6 +28,11 @@ const routes: Routes = [
     path: 'examples',
     loadChildren: () =>
       import('./features/examples/examples.module').then(m => m.ExamplesModule)
+  },
+  {
+    path: 'poll',
+    loadChildren: () =>
+      import('./features/poll/poll.module').then(m => m.PollModule)
   },
   {
     path: '**',
